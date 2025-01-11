@@ -27,4 +27,10 @@ class Penagihan extends Model
     ];
 
     public $timestamps = true;
+
+
+    public function logBuktiFaktur()
+    {
+        return $this->hasMany(LogBuktiFaktur::class, 'nohandphone', 'nohandphone');
+    }
 }

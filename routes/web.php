@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Api\BuktiFakturController;
+use App\Http\Controllers\Api\ApiBuktiFakturController;
 use App\Http\Controllers\CabangController;
 use App\Http\Controllers\ChangePasswordController;
 use App\Http\Controllers\HomeController;
@@ -20,11 +20,6 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
  */
-Route::prefix('api')->middleware('token.auth')->group(function () {
-    // Semua route di bawah ini akan memiliki prefix 'api' dan middleware 'token.auth'
-    Route::get('bukti_faktur/{nofaktur}', [BuktiFakturController::class, 'index']);
-});
-
 Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/', [HomeController::class, 'home']);
