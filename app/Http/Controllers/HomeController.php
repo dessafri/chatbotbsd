@@ -1,13 +1,19 @@
 <?php
-
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\Penagihan;
 
 class HomeController extends Controller
 {
     public function home()
     {
-        return redirect('dashboard');
+        $totalPenagihan      = Penagihan::getTotalNilaiPenagihan();
+        $penagihanDeliver    = Penagihan::getCountDeliverPenagihan();
+        $penagihanNotDeliver = Penagihan::getCountNotDeliverPenagihan();
+        $penagihanCount      = Penagihan::getCountPenagihan();
+
+        // Pass data directly to the view without using session
+        return view('dashboard', compact('totalPenagihan', 'penagihanDeliver', 'penagihanNotDeliver', 'penagihanCount'));
     }
+
 }

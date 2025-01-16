@@ -36,6 +36,9 @@
                                             class="text-start text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                             Nomor Rekening</th>
                                         <th
+                                            class="text-start text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                            Kode Bank</th>
+                                        <th
                                             class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                             Aksi</th>
                                     </tr>
@@ -66,6 +69,11 @@
                                                 <td class="align-middle text-start">
                                                     <p class="font-weight-bold mb-0 text-start">
                                                         {{ $cabang->nomor_rekening }}
+                                                    </p>
+                                                </td>
+                                                <td class="align-middle text-start">
+                                                    <p class="font-weight-bold mb-0 text-start">
+                                                        {{ $cabang->kode_bank }}
                                                     </p>
                                                 </td>
                                                 <td class="text-start align-middle">

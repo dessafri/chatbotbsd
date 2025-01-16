@@ -48,6 +48,15 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="row mt-3">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="kodeBank" class="form-label">Kode Bank</label>
+                                        <input type="text" class="form-control" id="kodeBank" name="kode_bank"
+                                            value="{{ $cabang->kode_bank }}" required>
+                                    </div>
+                                </div>
+                            </div>
 
                             <!-- Modal trigger button -->
                             <div class="d-flex justify-content-end">

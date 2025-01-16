@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\ApiBuktiFakturController;
-use Illuminate\Http\Request;
+use App\Http\Controllers\PenagihanController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,4 +21,5 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('api')->group(function () {
     // Semua route di bawah ini akan memiliki prefix 'api' dan middleware 'token.auth'
     Route::post('bukti-image-faktur', [ApiBuktiFakturController::class, 'index']);
+    Route::get('get-customer', [ApiBuktiFakturController::class, 'getCustomer']);
 });

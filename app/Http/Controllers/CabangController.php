@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use App\Models\Cabang;
@@ -32,17 +31,18 @@ class CabangController extends Controller
 
         try {
             $data = Cabang::create([
-                'kode_cabang' => $request['kode_cabang'],
-                'nama_cabang' => $request['nama_cabang'],
-                'nama_rekening' => $request['nama_rekening'],
+                'kode_cabang'    => $request['kode_cabang'],
+                'nama_cabang'    => $request['nama_cabang'],
+                'nama_rekening'  => $request['nama_rekening'],
                 'nomor_rekening' => $request['nomor_rekening'],
+                'kode_bank'      => $request['kode_bank'],
             ]);
 
             // Check if data was successfully created and redirect accordingly
             if ($data) {
-                return redirect()->route('cabang.index')->with('success', 'Data saved successfully!');
+                return redirect()->route('cabang.cabang')->with('success', 'Data saved successfully!');
             } else {
-                return redirect()->route('cabang.index')->with('error', 'Failed to save data.');
+                return redirect()->route('cabang.cabang')->with('error', 'Failed to save data.');
             }
         } catch (\Illuminate\Validation\ValidationException $e) {
             // Handle the validation error
@@ -71,7 +71,7 @@ class CabangController extends Controller
             return view('cabang.edit', compact('cabang'));
         } catch (\Exception $e) {
             // Handle decryption or deletion failure
-            return redirect()->route('cabang.index')->with('error', 'Invalid or corrupted ID!');
+            return redirect()->route('cabang.cabang')->with('error', 'Invalid or corrupted ID!');
         }
     }
 
@@ -87,19 +87,20 @@ class CabangController extends Controller
             $cabang = Cabang::findOrFail($id);
 
             // Update the Cabang model directly with request data
-            $cabang->kode_cabang = $request->input('kode_cabang');
-            $cabang->nama_cabang = $request->input('nama_cabang');
-            $cabang->nama_rekening = $request->input('nama_rekening');
+            $cabang->kode_cabang    = $request->input('kode_cabang');
+            $cabang->nama_cabang    = $request->input('nama_cabang');
+            $cabang->nama_rekening  = $request->input('nama_rekening');
             $cabang->nomor_rekening = $request->input('nomor_rekening');
+            $cabang->kode_bank = $request->input('kode_bank');
 
             // Save the updated data
             $cabang->save();
 
             // Redirect to the index with a success message
-            return redirect()->route('cabang.index')->with('success', 'Cabang updated successfully!');
+            return redirect()->route('cabang.cabang')->with('success', 'Cabang updated successfully!');
         } catch (\Exception $e) {
             // Handle errors (e.g., decryption, model not found)
-            return redirect()->route('cabang.index')->with('error', 'Invalid or corrupted ID!');
+            return redirect()->route('cabang.cabang')->with('error', 'Invalid or corrupted ID!');
         }
     }
 

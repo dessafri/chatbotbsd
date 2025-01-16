@@ -42,6 +42,15 @@
                             </div>
                         </div>
                     </div>
+                    <div class="row mt-3">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="kodebank" class="form-label">Kode Bank</label>
+                                <input type="text" class="form-control" id="kodebank" name="kode_bank"
+                                    placeholder="Masukkan Kode Bank" required>
+                            </div>
+                        </div>
+                    </div>
                 </form>
             </div>
             <div class="modal-footer">

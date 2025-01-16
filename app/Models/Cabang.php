@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -16,6 +15,7 @@ class Cabang extends Model
         'nama_cabang',
         'nomor_rekening',
         'nama_rekening',
+        'kode_bank',
     ];
 
     // Disable the timestamps if they are not needed

@@ -40,7 +40,7 @@
                 let bootstrapAlert = new bootstrap.Alert(alert);
                 bootstrapAlert.close();
             }
-        }, 3000); // Alert will disappear after 3 seconds
+        }, 5000); // Alert will disappear after 3 seconds
     </script>
 @endif
 

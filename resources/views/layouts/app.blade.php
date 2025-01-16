@@ -10,6 +10,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.5.7/dist/sweetalert2.min.css">
 
     <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('assets/img/apple-icon.png') }}">
     <link rel="icon" type="image/png" href="{{ asset('assets/img/favicon.png') }}">
@@ -33,6 +34,10 @@
     <link href="{{ asset('assets/fontawesome/css/fontawesome.css') }}" rel="stylesheet" />
     <link href="{{ asset('assets/fontawesome/css/brands.css') }}" rel="stylesheet" />
     <link href="{{ asset('assets/fontawesome/css/solid.css') }}" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.15.10/dist/sweetalert2.min.css" rel="stylesheet">
+    <!-- SweetAlert2 CSS -->
+
+    <!-- SweetAlert2 JS -->
     @stack('styles')
 
 </head>
@@ -48,7 +53,7 @@
 
     @include('session.alert')
 
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.5.7/dist/sweetalert2.min.js"></script>
     <!--   Core JS Files   -->
     <script src="{{ asset('assets/js/core/jquery.min.js') }}"></script>
     <script src="{{ asset('assets/js/core/popper.min.js') }}"></script>
@@ -58,6 +63,7 @@
     <script src="{{ asset('assets/js/plugins/fullcalendar.min.js') }}"></script>
     <script src="{{ asset('assets/js/plugins/chartjs.min.js') }}"></script>
     <script src="{{ asset('assets/js/plugins/datatables.min.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.15.10/dist/sweetalert2.all.min.js"></script>
     @stack('rtl')
     @stack('dashboard')
     @stack('js')
